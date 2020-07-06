@@ -2,19 +2,18 @@ package com.diq.quant.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
-import lombok.Getter;
+import lombok.Data;
 import lombok.NoArgsConstructor;
-import lombok.ToString;
 
-@Getter
-@Builder
-@ToString
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class CompanyDataDto {
-	
+
+	private String code;
 	private String name;
-	
+
 	private Double debtRatio;
 	private Double reserveRatio;
 	private Double operatingProfit;
@@ -22,6 +21,5 @@ public class CompanyDataDto {
 	private Double roe;
 	private Double per;
 	private Double pbr;
-	
-	
+
 }

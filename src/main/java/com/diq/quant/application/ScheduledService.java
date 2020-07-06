@@ -12,10 +12,12 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
+import com.diq.quant.domain.CompanyData;
+import com.diq.quant.domain.CompanyDataRepository;
 import com.diq.quant.domain.CompanyDetailRepository;
-import com.diq.quant.dto.CompanyDataDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -23,13 +25,14 @@ import lombok.RequiredArgsConstructor;
 @Transactional
 @RequiredArgsConstructor
 public class ScheduledService {
-
-	private final CompanyDetailRepository companyDetailRepository;
-
+	
+	private final CompanyDataRepository companyDataRepository;
+	
 	public void updateData() {
 
 	}
-
+	
+	@Scheduled(cron = "0 30 15 * * *", zone = "Asia/Seoul" )
 	public void firstSetting() {
 		// URL에 대해 변수화 설정할 것
 
@@ -91,20 +94,28 @@ public class ScheduledService {
 			String name = nameElement.select(".clf dt").text();
 			if (targetInvestList.contains(name)) {
 				Elements dataElements = nameElement.select("td");
-				
+
 				Double data = Double
 						.parseDouble(dataElements.get(dataElements.size() - 1).text().trim().replace(",", ""));
 
 				dataMap.put(targetInvestList.indexOf(name) + 5, data);
 			}
 		}
-
-		CompanyDataDto companyDataDto = CompanyDataDto.builder().name(companyCode).debtRatio(dataMap.get(0))
-				.reserveRatio(dataMap.get(1)).operatingProfit(dataMap.get(2)).roa(dataMap.get(3)).roe(dataMap.get(4))
-				.per(dataMap.get(5)).pbr(dataMap.get(6)).build();
-
-		System.out.println(companyDataDto.toString());
-
+		
+		CompanyData entity = CompanyData.builder()
+				.code(companyCode)
+				.name("company1")
+				.debtRatio(dataMap.get(0))
+				.reserveRatio(dataMap.get(1))
+				.operatingProfit(dataMap.get(2))
+				.roa(dataMap.get(3))
+				.roe(dataMap.get(4))
+				.per(null)
+				.pbr(null)
+				.build();
+		
+		companyDataRepository.save(entity);
+		
 	}
 
 }
