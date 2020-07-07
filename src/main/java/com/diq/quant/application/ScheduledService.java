@@ -17,7 +17,6 @@ import org.springframework.stereotype.Service;
 
 import com.diq.quant.domain.CompanyData;
 import com.diq.quant.domain.CompanyDataRepository;
-import com.diq.quant.domain.CompanyDetailRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -36,7 +35,13 @@ public class ScheduledService {
 	public void firstSetting() {
 		// URL에 대해 변수화 설정할 것
 
-		String companyCode = "A105560";
+		CompanyData entity = crawling("A200412");
+		
+		companyDataRepository.save(entity);
+		
+	}
+
+	private CompanyData crawling(String companyCode) {
 
 		String financeRatioUrl = "http://comp.fnguide.com/SVO2/ASP/SVD_FinanceRatio.asp?pGB=1&gicode=" + companyCode
 				+ "&cID=&MenuYn=Y&ReportGB=&NewMenuID=104&stkGb=701";
@@ -113,9 +118,7 @@ public class ScheduledService {
 				.per(null)
 				.pbr(null)
 				.build();
-		
-		companyDataRepository.save(entity);
-		
+		return entity;
 	}
 
 }
