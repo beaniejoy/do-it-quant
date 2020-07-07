@@ -28,4 +28,26 @@ public class CompanyDetail {
 	private Integer startPrice;
 	
 	private Integer endPrice;
+	
+	private Long totalAsset;
+	
+	private Long totalEquity;
+	
+	private Long totalDebt;
+	
+	private Long sales;
+	
+	private Long operatingProfit;
+	
+	private Long netIncome;
+	
+	private Long capitalSurplus;
+	
+	private Long retainedEarnings;
+	
+	private Long paidInCapital;
+	
+	private String description;
+	
+	private String market;
 }
