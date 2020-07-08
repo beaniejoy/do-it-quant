@@ -15,8 +15,8 @@ import org.jsoup.select.Elements;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
-import com.diq.quant.domain.CompanyData;
-import com.diq.quant.domain.CompanyDataRepository;
+import com.diq.quant.domain.QuantData;
+import com.diq.quant.domain.QuantDataRepository;
 
 import lombok.RequiredArgsConstructor;
 
@@ -25,7 +25,7 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class ScheduledService {
 	
-	private final CompanyDataRepository companyDataRepository;
+	private final QuantDataRepository companyDataRepository;
 	
 	public void updateData() {
 
@@ -35,13 +35,13 @@ public class ScheduledService {
 	public void firstSetting() {
 		// URL에 대해 변수화 설정할 것
 
-		CompanyData entity = crawling("A200412");
+		QuantData entity = crawling("A200412");
 		
 		companyDataRepository.save(entity);
 		
 	}
 
-	private CompanyData crawling(String companyCode) {
+	private QuantData crawling(String companyCode) {
 
 		String financeRatioUrl = "http://comp.fnguide.com/SVO2/ASP/SVD_FinanceRatio.asp?pGB=1&gicode=" + companyCode
 				+ "&cID=&MenuYn=Y&ReportGB=&NewMenuID=104&stkGb=701";
@@ -107,9 +107,9 @@ public class ScheduledService {
 			}
 		}
 		
-		CompanyData entity = CompanyData.builder()
+		QuantData entity = QuantData.builder()
 				.code(companyCode)
-				.name("company1")
+				.cmpname("company1")
 				.debtRatio(dataMap.get(0))
 				.reserveRatio(dataMap.get(1))
 				.operatingProfit(dataMap.get(2))

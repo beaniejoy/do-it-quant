@@ -17,7 +17,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class CompanyData {
+public class QuantData {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,7 +25,7 @@ public class CompanyData {
 	
 	private String code;
 	
-	private String name;
+	private String cmpname;
 	
 	private Double debtRatio;
 	
@@ -41,11 +41,11 @@ public class CompanyData {
 	
 	private Double pbr;
 	
-	public CompanyData toEntity(CompanyDataDto dto) {
+	public QuantData toEntity(CompanyDataDto dto) {
 		
-		return CompanyData.builder()
+		return QuantData.builder()
 				.code(dto.getCode())
-				.name(dto.getName())
+//				.cmpname(dto.get)
 				.debtRatio(dto.getDebtRatio())
 				.reserveRatio(dto.getReserveRatio())
 				.operatingProfit(dto.getOperatingProfit())
