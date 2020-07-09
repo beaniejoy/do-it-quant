@@ -5,8 +5,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import com.diq.quant.dto.CompanyDataDto;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -41,19 +39,4 @@ public class QuantData {
 	
 	private Double pbr;
 	
-	public QuantData toEntity(CompanyDataDto dto) {
-		
-		return QuantData.builder()
-				.code(dto.getCode())
-//				.cmpname(dto.get)
-				.debtRatio(dto.getDebtRatio())
-				.reserveRatio(dto.getReserveRatio())
-				.operatingProfit(dto.getOperatingProfit())
-				.roa(dto.getRoa())
-				.roe(dto.getRoe())
-				.per(dto.getPer())
-				.pbr(dto.getPbr())
-				.build();
-		
-	}
 }

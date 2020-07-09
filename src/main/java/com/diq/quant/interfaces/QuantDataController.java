@@ -37,6 +37,6 @@ public class QuantDataController {
 	public ResponseEntity<?> bulkUpdate(@RequestBody List<QuantDataApiRequest> requestList) throws URISyntaxException {
 
 		quantDataService.bulkUpdate(requestList);
-		return ResponseEntity.created(new URI("")).body("");
+		return ResponseEntity.created(new URI("")).body("{}");
 	}
 }
