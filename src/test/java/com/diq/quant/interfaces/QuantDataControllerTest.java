@@ -1,5 +1,6 @@
 package com.diq.quant.interfaces;
 
+import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -39,7 +40,7 @@ public class QuantDataControllerTest {
 		List<QuantDataApiResponse> quantResponses = new ArrayList<>();
 		quantResponses.add(mockQuantResponse);
 		
-//		given(quantDataService.getQuantDataList()).willRe
+		when(quantDataService.getQuantDataList()).thenReturn(quantResponses);
 		
 		mvc.perform(get("/quantdata"))
 		.andExpect(status().isOk())

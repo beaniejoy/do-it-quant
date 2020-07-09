@@ -1,5 +1,7 @@
 package com.diq.quant.dto;
 
+import com.diq.quant.domain.QuantData;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,7 +17,7 @@ public class QuantDataApiResponse {
 	
 	private String code;
 
-	private String name;
+	private String cmpname;
 
 	private Double debtRatio;
 
@@ -30,4 +32,20 @@ public class QuantDataApiResponse {
 	private Double per;
 
 	private Double pbr;
+	
+	public static QuantDataApiResponse toResponse(QuantData entity) {
+		
+		return QuantDataApiResponse.builder()
+				.id(entity.getId())
+				.code(entity.getCode())
+				.cmpname(entity.getCmpname())
+				.debtRatio(entity.getDebtRatio())
+				.reserveRatio(entity.getReserveRatio())
+				.operatingProfit(entity.getOperatingProfit())
+				.roa(entity.getRoa())
+				.roe(entity.getRoe())
+				.per(entity.getPer())
+				.pbr(entity.getPbr())
+				.build();
+	}
 }
