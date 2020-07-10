@@ -31,7 +31,7 @@ public class QuantData {
 
 	private Double reserveRatio;
 
-	private Double operatingProfit;
+	private Double operatingProfitRatio;
 
 	private Double roa;
 
@@ -49,7 +49,7 @@ public class QuantData {
 				.cmpname(cmpname)
 				.debtRatio(debtRatio)
 				.reserveRatio(reserveRatio)
-				.operatingProfit(operatingProfit)
+				.operatingProfitRatio(operatingProfitRatio)
 				.roa(roa)
 				.roe(roe)
 				.per(per)

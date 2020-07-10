@@ -21,7 +21,7 @@ public class QuantDataApiRequest {
 
 	private Double reserveRatio;
 
-	private Double operatingProfit;
+	private Double operatingProfitRatio;
 
 	private Double roa;
 
@@ -38,7 +38,7 @@ public class QuantDataApiRequest {
 				.cmpname(cmpname)
 				.debtRatio(debtRatio)
 				.reserveRatio(reserveRatio)
-				.operatingProfit(operatingProfit)
+				.operatingProfitRatio(operatingProfitRatio)
 				.roa(roa)
 				.roe(roe)
 				.per(per)

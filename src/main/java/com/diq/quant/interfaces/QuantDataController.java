@@ -31,7 +31,7 @@ public class QuantDataController {
 
 	@GetMapping("/quantdata/{id}")
 	public QuantDataApiResponse detail(@PathVariable("id") Long id) {
-		return null;
+		return quantDataService.getQuantData(id);
 	}
 	
 	@PostMapping("/quantdata")
@@ -39,8 +39,8 @@ public class QuantDataController {
 		
 		QuantDataApiResponse response = quantDataService.addQuantData(request);
 		
-		URI uri = new URI("/quantdata/" + response.getId());
-		return ResponseEntity.created(uri).body("{}");
+		URI location = new URI("/quantdata/" + response.getId());
+		return ResponseEntity.created(location).body("{}");
 	}
 
 	@PatchMapping("/quantdata")

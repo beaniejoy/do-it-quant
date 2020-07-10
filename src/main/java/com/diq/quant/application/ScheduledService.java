@@ -112,7 +112,7 @@ public class ScheduledService {
 				.cmpname("company1")
 				.debtRatio(dataMap.get(0))
 				.reserveRatio(dataMap.get(1))
-				.operatingProfit(dataMap.get(2))
+				.operatingProfitRatio(dataMap.get(2))
 				.roa(dataMap.get(3))
 				.roe(dataMap.get(4))
 				.per(null)

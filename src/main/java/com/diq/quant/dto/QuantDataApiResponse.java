@@ -23,7 +23,7 @@ public class QuantDataApiResponse {
 
 	private Double reserveRatio;
 
-	private Double operatingProfit;
+	private Double operatingProfitRatio;
 
 	private Double roa;
 
