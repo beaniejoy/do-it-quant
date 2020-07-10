@@ -33,19 +33,5 @@ public class QuantDataApiResponse {
 
 	private Double pbr;
 	
-	public static QuantDataApiResponse toResponse(QuantData entity) {
-		
-		return QuantDataApiResponse.builder()
-				.id(entity.getId())
-				.code(entity.getCode())
-				.cmpname(entity.getCmpname())
-				.debtRatio(entity.getDebtRatio())
-				.reserveRatio(entity.getReserveRatio())
-				.operatingProfit(entity.getOperatingProfit())
-				.roa(entity.getRoa())
-				.roe(entity.getRoe())
-				.per(entity.getPer())
-				.pbr(entity.getPbr())
-				.build();
-	}
+	
 }

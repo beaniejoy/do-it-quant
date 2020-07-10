@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,11 +33,20 @@ public class QuantDataController {
 	public QuantDataApiResponse detail(@PathVariable("id") Long id) {
 		return null;
 	}
-
+	
 	@PostMapping("/quantdata")
-	public ResponseEntity<?> bulkUpdate(@RequestBody List<QuantDataApiRequest> requestList) throws URISyntaxException {
+	public ResponseEntity<?> create(@RequestBody QuantDataApiRequest request) throws URISyntaxException{
+		
+		QuantDataApiResponse response = quantDataService.addQuantData(request);
+		
+		URI uri = new URI("/quantdata/" + response.getId());
+		return ResponseEntity.created(uri).body("{}");
+	}
+
+	@PatchMapping("/quantdata")
+	public ResponseEntity<String> bulkUpdate(@RequestBody List<QuantDataApiRequest> requestList) throws URISyntaxException {
 
 		quantDataService.bulkUpdate(requestList);
-		return ResponseEntity.created(new URI("")).body("{}");
+		return ResponseEntity.ok("Success");
 	}
 }
