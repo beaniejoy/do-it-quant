@@ -1,0 +1,24 @@
+[
+    {
+        "cmpname": "input기업",
+        "code": "000000",
+        "debtRatio": 21.2,
+        "operatingProfitRatio": 0.2,
+        "pbr": 0.2,
+        "per": 0.3,
+        "reserveRatio": 0.5,
+        "roa": 0.6,
+        "roe": null 
+    },
+    {
+        "cmpname": "input기업2",
+        "code": "000000",
+        "debtRatio": 21.2,
+        "operatingProfitRatio": 0.2,
+        "pbr": null,
+        "per": 0.3,
+        "reserveRatio": 0.5,
+        "roa": 0.6,
+        "roe": 0.8 
+    }
+]
