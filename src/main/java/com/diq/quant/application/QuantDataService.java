@@ -28,6 +28,8 @@ public class QuantDataService {
 				.collect(Collectors.toList());
 	}
 	
+//	select cmpname, rank()  over(order by debt_ratio) rank from quant_data
+	
 	public QuantDataApiResponse getQuantData(Long id) {
 		QuantData quantData = quantDataRepository.findById(id)
 				.orElseThrow(() -> new QuantDataNotFoundException(id));

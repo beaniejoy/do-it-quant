@@ -1,12 +1,14 @@
 package com.diq.quant.interfaces;
 
+import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PatchMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -15,6 +17,10 @@ import org.springframework.web.bind.annotation.RestController;
 import com.diq.quant.application.QuantDataService;
 import com.diq.quant.dto.QuantDataApiRequest;
 import com.diq.quant.dto.QuantDataApiResponse;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -33,20 +39,27 @@ public class QuantDataController {
 	public QuantDataApiResponse detail(@PathVariable("id") Long id) {
 		return quantDataService.getQuantData(id);
 	}
-	
+
 	@PostMapping("/quantdata")
-	public ResponseEntity<?> create(@RequestBody QuantDataApiRequest request) throws URISyntaxException{
-		
+	public ResponseEntity<?> create(@RequestBody QuantDataApiRequest request) throws URISyntaxException {
+
 		QuantDataApiResponse response = quantDataService.addQuantData(request);
-		
+
 		URI location = new URI("/quantdata/" + response.getId());
 		return ResponseEntity.created(location).body("{}");
 	}
 
-	@PatchMapping("/quantdata")
-	public ResponseEntity<String> bulkUpdate(@RequestBody List<QuantDataApiRequest> requestList) throws URISyntaxException {
+	@Scheduled(cron = "0 0 0 1 2,5,8,11 *", zone = "Asia/Seoul")
+	public ResponseEntity<String> bulkUpdate()
+			throws JsonParseException, JsonMappingException, IOException {
 
-		quantDataService.bulkUpdate(requestList);
-		return ResponseEntity.ok("Success");
+		ObjectMapper objectMapper = new ObjectMapper();
+
+		List<QuantDataApiRequest> quantDataApiRequest = objectMapper.readValue(new File("quant-data-list.json"),
+				new TypeReference<List<QuantDataApiRequest>>() {
+				});
+
+		quantDataService.bulkUpdate(quantDataApiRequest);
+		return ResponseEntity.ok("Update All Success");
 	}
 }
