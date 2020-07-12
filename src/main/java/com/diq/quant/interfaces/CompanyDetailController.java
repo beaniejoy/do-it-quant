@@ -15,6 +15,7 @@ public class CompanyDetailController {
 	
 	private final CompanyDetailService companyDetailService;
 	
+	// 종목코드로 받아와도 될듯
 	@GetMapping("/companies/{id}")
 	public CompanyDetailResponse detail(@PathVariable("id") Long id) {
 		return companyDetailService.getCompanyDetail(id);
