@@ -30,6 +30,14 @@ public class QuantDataController {
 
 	private final QuantDataService quantDataService;
 
+	// TODO: rank 결과 리스트 반환
+	// 사용자 임의의 기준 설정에 대한 파라미터를 ReqeustBody로 받아와야 할 듯
+	// 반환 리스트로 rank 결과 + 모든 데이터 포함할지 결정
+	@GetMapping("/quantdata/rank")
+	public List<?> rank() {
+		return quantDataService.getRankList();
+	}
+	
 	@GetMapping("/quantdata")
 	public List<QuantDataApiResponse> list() {
 		return quantDataService.getQuantDataList();
@@ -49,7 +57,7 @@ public class QuantDataController {
 		return ResponseEntity.created(location).body("{}");
 	}
 
-	@Scheduled(cron = "0 0 0 1 2,5,8,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 0 0 12 2,5,8,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 

@@ -20,6 +20,11 @@ public class QuantDataService {
 
 	private final QuantDataRepository quantDataRepository;
 
+	public List<?> getRankList() {
+		
+		return null;
+	}
+	
 	public List<QuantDataApiResponse> getQuantDataList() {
 		return quantDataRepository.findAll().stream()
 				.map(quantData -> {
@@ -27,9 +32,7 @@ public class QuantDataService {
 				})
 				.collect(Collectors.toList());
 	}
-	
-//	select cmpname, rank()  over(order by debt_ratio) rank from quant_data
-	
+		
 	public QuantDataApiResponse getQuantData(Long id) {
 		QuantData quantData = quantDataRepository.findById(id)
 				.orElseThrow(() -> new QuantDataNotFoundException(id));
@@ -58,5 +61,7 @@ public class QuantDataService {
 		}
 		
 	}
+
+	
 
 }
