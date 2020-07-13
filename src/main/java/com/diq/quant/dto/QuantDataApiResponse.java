@@ -17,7 +17,7 @@ public class QuantDataApiResponse {
 	
 	private String code;
 
-	private String cmpname;
+	private String cmpName;
 
 	private Double debtRatio;
 

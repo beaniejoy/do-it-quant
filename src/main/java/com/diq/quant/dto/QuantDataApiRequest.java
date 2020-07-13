@@ -15,7 +15,7 @@ public class QuantDataApiRequest {
 
 	private String code;
 
-	private String cmpname;
+	private String cmpName;
 
 	private Double debtRatio;
 
@@ -35,7 +35,7 @@ public class QuantDataApiRequest {
 		
 		return QuantData.builder()
 				.code(code)
-				.cmpname(cmpname)
+				.cmpName(cmpName)
 				.debtRatio(debtRatio)
 				.reserveRatio(reserveRatio)
 				.operatingProfitRatio(operatingProfitRatio)

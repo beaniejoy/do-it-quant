@@ -25,7 +25,7 @@ public class CompanyDetail {
 	
 	private String code; // 종목코드
 	
-	private String cmpname; // 기업 이름
+	private String cmpName; // 기업 이름
 	
 	private String description; // 해당 기업 설명
 	
@@ -52,7 +52,7 @@ public class CompanyDetail {
 		return CompanyDetailResponse.builder()
 				.id(id)
 				.code(code)
-				.cmpname(cmpname)
+				.cmpName(cmpName)
 				.description(description)
 				.market(market)
 				.endPrice(endPrice)

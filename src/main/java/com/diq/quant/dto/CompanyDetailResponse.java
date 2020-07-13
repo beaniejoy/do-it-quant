@@ -15,7 +15,7 @@ public class CompanyDetailResponse {
 
 	private String code;
 
-	private String cmpname;
+	private String cmpName;
 	
 	private String description;
 

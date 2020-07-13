@@ -57,13 +57,13 @@ public class QuantDataController {
 		return ResponseEntity.created(location).body("{}");
 	}
 
-	@Scheduled(cron = "0 47 8 13 2,5,7,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 57 17 13 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		List<QuantDataApiRequest> quantDataApiRequest = objectMapper.readValue(new File("quant-data-list.json"),
+		List<QuantDataApiRequest> quantDataApiRequest = objectMapper.readValue(new File("QuantDataTable.json"),
 				new TypeReference<List<QuantDataApiRequest>>() {
 				});
 

@@ -25,7 +25,7 @@ public class QuantData {
 
 	private String code;
 
-	private String cmpname;
+	private String cmpName;
 
 	private Double debtRatio;
 
@@ -46,7 +46,7 @@ public class QuantData {
 		return QuantDataApiResponse.builder()
 				.id(id)
 				.code(code)
-				.cmpname(cmpname)
+				.cmpName(cmpName)
 				.debtRatio(debtRatio)
 				.reserveRatio(reserveRatio)
 				.operatingProfitRatio(operatingProfitRatio)
