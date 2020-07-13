@@ -15,7 +15,11 @@ public class CompanyDetailResponse {
 
 	private String code;
 
-	private String name;
+	private String cmpname;
+	
+	private String description;
+
+	private String market;
 
 	private Integer startPrice;
 
@@ -33,13 +37,6 @@ public class CompanyDetailResponse {
 
 	private Long netIncome;
 
-	private Long capitalSurplus;
-
 	private Long retainedEarnings;
 
-	private Long paidInCapital;
-
-	private String description;
-
-	private String market;
 }

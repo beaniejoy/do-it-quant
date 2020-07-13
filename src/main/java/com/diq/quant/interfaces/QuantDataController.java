@@ -57,7 +57,7 @@ public class QuantDataController {
 		return ResponseEntity.created(location).body("{}");
 	}
 
-	@Scheduled(cron = "0 0 0 12 2,5,8,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 47 8 13 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 
