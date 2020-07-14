@@ -34,6 +34,5 @@ public class CompanyDetailRequest {
 	private Long operatingProfit;
 
 	private Long retainedEarnings;
-	
-	
+
 }
