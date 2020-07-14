@@ -1,11 +1,23 @@
 package com.diq.quant.interfaces;
 
+import java.io.File;
+import java.io.IOException;
+import java.util.List;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.diq.quant.application.CompanyDetailService;
+import com.diq.quant.dto.CompanyDetailRequest;
 import com.diq.quant.dto.CompanyDetailResponse;
+import com.diq.quant.dto.QuantDataApiRequest;
+import com.fasterxml.jackson.core.JsonParseException;
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
 
@@ -20,4 +32,19 @@ public class CompanyDetailController {
 	public CompanyDetailResponse detail(@PathVariable("id") Long id) {
 		return companyDetailService.getCompanyDetail(id);
 	}
+	
+	@Scheduled(cron = "0 16 9 14 2,5,7,11 *", zone = "Asia/Seoul")
+	public ResponseEntity<String> bulkUpdate() 
+			throws JsonParseException, JsonMappingException, IOException {
+		
+		ObjectMapper objectMapper = new ObjectMapper();
+
+		List<CompanyDetailRequest> companyDetailRequestList = objectMapper.readValue(new File("CompanyDetailTable.json"),
+				new TypeReference<List<CompanyDetailRequest>>() {
+		});
+		
+//		quantDataService.bulkUpdate(quantDataApiRequestList);
+		return ResponseEntity.ok("Update All Success");
+	}
+	
 }

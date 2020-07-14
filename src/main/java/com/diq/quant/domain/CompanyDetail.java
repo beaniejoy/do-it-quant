@@ -25,7 +25,7 @@ public class CompanyDetail {
 	
 	private String code; // 종목코드
 	
-	private String cmpName; // 기업 이름
+	private String name; // 기업 이름
 	
 	private String description; // 해당 기업 설명
 	
@@ -42,9 +42,7 @@ public class CompanyDetail {
 	private Long sales; // 매출액
 	
 	private Long operatingProfit; // 영업이익
-	
-	private Long netIncome; // 당기순이익
-		
+			
 	private Long retainedEarnings; // 이익잉여금
 		
 	public CompanyDetailResponse toResponse() {
@@ -52,7 +50,7 @@ public class CompanyDetail {
 		return CompanyDetailResponse.builder()
 				.id(id)
 				.code(code)
-				.cmpName(cmpName)
+				.name(name)
 				.description(description)
 				.market(market)
 				.endPrice(endPrice)
@@ -61,7 +59,6 @@ public class CompanyDetail {
 				.totalDebt(totalDebt)
 				.sales(sales)
 				.operatingProfit(operatingProfit)
-				.netIncome(netIncome)
 				.retainedEarnings(retainedEarnings)
 				.build();
 	}

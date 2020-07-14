@@ -56,18 +56,19 @@ public class QuantDataController {
 		URI location = new URI("/quantdata/" + response.getId());
 		return ResponseEntity.created(location).body("{}");
 	}
-
-	@Scheduled(cron = "0 57 17 13 2,5,7,11 *", zone = "Asia/Seoul")
+	
+	// crawling data -> DB insert 자동화 작업
+	@Scheduled(cron = "0 16 9 14 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		List<QuantDataApiRequest> quantDataApiRequest = objectMapper.readValue(new File("QuantDataTable.json"),
+		List<QuantDataApiRequest> quantDataApiRequestList = objectMapper.readValue(new File("QuantDataTable.json"),
 				new TypeReference<List<QuantDataApiRequest>>() {
-				});
+		});
 
-		quantDataService.bulkUpdate(quantDataApiRequest);
+		quantDataService.bulkUpdate(quantDataApiRequestList);
 		return ResponseEntity.ok("Update All Success");
 	}
 }

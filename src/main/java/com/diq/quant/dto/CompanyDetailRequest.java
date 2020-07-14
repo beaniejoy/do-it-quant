@@ -9,9 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class CompanyDetailResponse {
-
-	private Long id;
+public class CompanyDetailRequest {
 
 	private String code;
 
@@ -36,5 +34,6 @@ public class CompanyDetailResponse {
 	private Long operatingProfit;
 
 	private Long retainedEarnings;
-
+	
+	
 }
