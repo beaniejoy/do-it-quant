@@ -4,7 +4,8 @@ build/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-company_list.xls
+QuantDataTable.json
+CompanyDetailTable.json
 
 ### STS ###
 .apt_generated
