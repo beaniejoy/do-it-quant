@@ -19,17 +19,10 @@ import lombok.RequiredArgsConstructor;
 public class QuantDataService {
 
 	private final QuantDataRepository quantDataRepository;
-
-	public List<?> getRankList() {
-		
-		return null;
-	}
 	
 	public List<QuantDataApiResponse> getQuantDataList() {
 		return quantDataRepository.findAll().stream()
-				.map(quantData -> {
-					return quantData.toResponse();
-				})
+				.map(QuantData::toResponse)
 				.collect(Collectors.toList());
 	}
 		

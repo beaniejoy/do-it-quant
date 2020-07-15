@@ -1,5 +1,7 @@
 package com.diq.quant.dto;
 
+import com.diq.quant.domain.CompanyDetail;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,8 +21,6 @@ public class CompanyDetailRequest {
 
 	private String market;
 
-	private Integer startPrice;
-
 	private Integer endPrice;
 
 	private Long totalAsset;
@@ -35,4 +35,20 @@ public class CompanyDetailRequest {
 
 	private Long retainedEarnings;
 
+	public CompanyDetail toEntity() {
+		
+		return CompanyDetail.builder()
+				.code(code)
+				.name(name)
+				.description(description)
+				.market(market)
+				.endPrice(endPrice)
+				.totalAsset(totalAsset)
+				.totalEquity(totalEquity)
+				.totalDebt(totalDebt)
+				.sales(sales)
+				.operatingProfit(operatingProfit)
+				.retainedEarnings(retainedEarnings)
+				.build();
+	}
 }

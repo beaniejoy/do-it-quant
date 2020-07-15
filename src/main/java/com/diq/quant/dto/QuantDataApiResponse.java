@@ -1,7 +1,5 @@
 package com.diq.quant.dto;
 
-import com.diq.quant.domain.QuantData;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

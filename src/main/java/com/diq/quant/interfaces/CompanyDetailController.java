@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.diq.quant.application.CompanyDetailService;
 import com.diq.quant.dto.CompanyDetailRequest;
 import com.diq.quant.dto.CompanyDetailResponse;
-import com.diq.quant.dto.QuantDataApiRequest;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -26,6 +25,11 @@ import lombok.RequiredArgsConstructor;
 public class CompanyDetailController {
 	
 	private final CompanyDetailService companyDetailService;
+	
+	@GetMapping("/companies")
+	public List<CompanyDetailResponse> list() {
+		return companyDetailService.getCompanyDetailList();
+	}
 	
 	// 종목코드로 받아와도 될듯
 	@GetMapping("/companies/{id}")
@@ -43,7 +47,7 @@ public class CompanyDetailController {
 				new TypeReference<List<CompanyDetailRequest>>() {
 		});
 		
-//		quantDataService.bulkUpdate(quantDataApiRequestList);
+		companyDetailService.bulkUpdate(companyDetailRequestList);
 		return ResponseEntity.ok("Update All Success");
 	}
 	
