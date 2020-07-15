@@ -1,11 +1,10 @@
 .gradle
 bin/
 build/
+tmp_data/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
-QuantDataTable.json
-CompanyDetailTable.json
 
 ### STS ###
 .apt_generated
