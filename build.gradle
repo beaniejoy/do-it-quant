@@ -1,5 +1,5 @@
 plugins {
-	id 'org.springframework.boot' version '2.3.1.RELEASE'
+	id 'org.springframework.boot' version '2.2.8.RELEASE'
 	id 'io.spring.dependency-management' version '1.0.9.RELEASE'
 	id 'java'
 }
@@ -9,6 +9,10 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '1.8'
 
 configurations {
+	developmentOnly
+	runtimeClasspath {
+        extendsFrom developmentOnly
+    }
 	compileOnly {
 		extendsFrom annotationProcessor
 	}
@@ -27,16 +31,17 @@ dependencies {
 	implementation 'org.apache.poi:poi:4.1.2'
 	implementation 'org.apache.poi:poi-ooxml:4.1.2'
 	
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	developmentOnly('org.springframework.boot:spring-boot-devtools')
 	compileOnly 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	annotationProcessor 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
-	testImplementation('org.springframework.boot:spring-boot-starter-test') {
-		exclude group: 'org.junit.vintage', module: 'junit-vintage-engine'
-	}
+	testImplementation('org.springframework.boot:spring-boot-starter-test')
 }
 
 test {
-	useJUnitPlatform()
+	useJUnitPlatform {
+		includeEngines 'junit-vintage'
+		excludeEngines 'junit-jupiter'
+	}
 }

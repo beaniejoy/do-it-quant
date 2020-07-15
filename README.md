@@ -8,7 +8,9 @@
 
 ## Stack
 - Front(Mobile): React-Native, Android
-- Back: Spring Boot(java)
+- Back: Spring Boot `2.2.6` (Java 8)
+- Test: JUnit4
+- Build: Gradle `5.6.4` 
 - DB: MariaDB(AWS RDS)
 - Cloud: AWS EC2
 
