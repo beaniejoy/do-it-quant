@@ -1,5 +1,7 @@
 # Do It Quant!
 
+[![Build Status](https://travis-ci.org/hanbinleejoy/do-it-quant.svg?branch=master)](https://travis-ci.org/hanbinleejoy/do-it-quant)
+
 > mini project
 
 간단한 퀀트 투자 모바일 서비스 개발

@@ -30,9 +30,7 @@ public class CompanyDetail {
 	private String description; // 해당 기업 설명
 	
 	private String market; // 해당 업종
-		
-	private Integer endPrice; // 종가 (하루 장 마감)
-	
+			
 	private Long totalAsset; // 총 자산
 	
 	private Long totalEquity; // 총 자본
@@ -53,7 +51,6 @@ public class CompanyDetail {
 				.name(name)
 				.description(description)
 				.market(market)
-				.endPrice(endPrice)
 				.totalAsset(totalAsset)
 				.totalEquity(totalEquity)
 				.totalDebt(totalDebt)

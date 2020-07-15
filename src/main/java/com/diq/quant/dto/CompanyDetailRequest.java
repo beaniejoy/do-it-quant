@@ -21,8 +21,6 @@ public class CompanyDetailRequest {
 
 	private String market;
 
-	private Integer endPrice;
-
 	private Long totalAsset;
 
 	private Long totalEquity;
@@ -42,7 +40,6 @@ public class CompanyDetailRequest {
 				.name(name)
 				.description(description)
 				.market(market)
-				.endPrice(endPrice)
 				.totalAsset(totalAsset)
 				.totalEquity(totalEquity)
 				.totalDebt(totalDebt)

@@ -21,8 +21,6 @@ public class CompanyDetailResponse {
 
 	private String market;
 
-	private Integer endPrice;
-
 	private Long totalAsset;
 
 	private Long totalEquity;

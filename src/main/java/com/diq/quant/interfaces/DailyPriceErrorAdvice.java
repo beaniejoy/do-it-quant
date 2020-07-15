@@ -6,14 +6,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
-import com.diq.quant.application.CompanyDetailNotFoundException;
+import com.diq.quant.application.DailyPriceNotFoundException;
 
 @ControllerAdvice
-public class CompanyDetailErrorAdvice {
+public class DailyPriceErrorAdvice {
 
 	@ResponseBody
 	@ResponseStatus(HttpStatus.NOT_FOUND)
-	@ExceptionHandler(CompanyDetailNotFoundException.class)
+	@ExceptionHandler(DailyPriceNotFoundException.class)
 	public String handleNotFound() {
 		return "{}";
 	}

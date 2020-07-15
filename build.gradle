@@ -28,6 +28,8 @@ dependencies {
 	implementation 'org.jsoup:jsoup:1.13.1'
 	implementation 'com.h2database:h2'
 	
+	compile('org.mariadb.jdbc:mariadb-java-client') // MariaDB
+	
 	implementation 'org.apache.poi:poi:4.1.2'
 	implementation 'org.apache.poi:poi-ooxml:4.1.2'
 	

@@ -30,7 +30,7 @@ public class CompanyDetailService {
 	public CompanyDetailResponse getCompanyDetail(Long id) {
 
 		CompanyDetail companyDetail = companyDetailRepository.findById(id)
-				.orElseThrow(() -> new CompanyDetailNotFound(id));
+				.orElseThrow(() -> new CompanyDetailNotFoundException(id));
 
 		return companyDetail.toResponse();
 	}
