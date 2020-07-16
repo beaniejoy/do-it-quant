@@ -1,0 +1,19 @@
+# CodeDeploy -> EC2로 보내기 전에 하는 설정사항
+version: 0.0 # CodeDeploy 버전 -> 보통 0.0으로 한다.
+os: linux
+files:
+  - source: /
+    destination: /home/ec2-user/app/diq/zip # EC2의 어느 디렉토리로 전달할 것인지 설정
+    overwrite: yes # 만약 같은 파일 명이 있으면 덮어씌우기
+
+permissions: # "/" 모든 파일에 대해 ec2-user 사용자에게 모든 권한을 부여
+  - object: /
+    pattern: "**"
+    owner: ec2-user
+    group: ec2-user
+
+hooks:
+  ApplicationStart: # 애플리케이션 실행할 때의 설정
+    - location: deploy.sh
+      timeout: 60
+      runas: ec2-user
