@@ -51,13 +51,13 @@ public class QuantDataController {
 	
 	// 3개월 단위로 자동 update
 	// crawling data -> DB insert 자동화 작업
-//	@Scheduled(cron = "0 16 9 14 2,5,7,11 *", zone = "Asia/Seoul")
+//	@Scheduled(cron = "0 59 16 16 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		List<QuantDataApiRequest> quantDataApiRequestList = objectMapper.readValue(new File("QuantDataTable.json"),
+		List<QuantDataApiRequest> quantDataApiRequestList = objectMapper.readValue(new File("tmp_data/QuantDataTable.json"),
 				new TypeReference<List<QuantDataApiRequest>>() {
 		});
 

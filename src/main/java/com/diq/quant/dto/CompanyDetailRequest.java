@@ -30,6 +30,8 @@ public class CompanyDetailRequest {
 	private Long sales;
 
 	private Long operatingProfit;
+	
+	private Long netIncome;
 
 	private Long retainedEarnings;
 
@@ -45,6 +47,7 @@ public class CompanyDetailRequest {
 				.totalDebt(totalDebt)
 				.sales(sales)
 				.operatingProfit(operatingProfit)
+				.netIncome(netIncome)
 				.retainedEarnings(retainedEarnings)
 				.build();
 	}

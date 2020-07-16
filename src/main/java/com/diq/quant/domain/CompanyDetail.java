@@ -40,6 +40,8 @@ public class CompanyDetail {
 	private Long sales; // 매출액
 	
 	private Long operatingProfit; // 영업이익
+	
+	private Long netIncome; // 당기순이익
 			
 	private Long retainedEarnings; // 이익잉여금
 		
@@ -56,6 +58,7 @@ public class CompanyDetail {
 				.totalDebt(totalDebt)
 				.sales(sales)
 				.operatingProfit(operatingProfit)
+				.netIncome(netIncome)
 				.retainedEarnings(retainedEarnings)
 				.build();
 	}

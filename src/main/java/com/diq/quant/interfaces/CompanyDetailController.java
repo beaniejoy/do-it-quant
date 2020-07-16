@@ -38,13 +38,13 @@ public class CompanyDetailController {
 	}
 	
 	// 3개월 단위로 update
-//	@Scheduled(cron = "0 16 9 14 2,5,7,11 *", zone = "Asia/Seoul")
+//	@Scheduled(cron = "0 19 17 16 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() 
 			throws JsonParseException, JsonMappingException, IOException {
 		
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		List<CompanyDetailRequest> companyDetailRequestList = objectMapper.readValue(new File("CompanyDetailTable.json"),
+		List<CompanyDetailRequest> companyDetailRequestList = objectMapper.readValue(new File("tmp_data/CompanyDetailTable.json"),
 				new TypeReference<List<CompanyDetailRequest>>() {
 		});
 		

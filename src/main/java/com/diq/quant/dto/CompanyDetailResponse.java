@@ -30,6 +30,8 @@ public class CompanyDetailResponse {
 	private Long sales;
 
 	private Long operatingProfit;
+	
+	private Long netIncome;
 
 	private Long retainedEarnings;
 
