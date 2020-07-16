@@ -15,7 +15,7 @@ public class CompanyDetailRequest {
 
 	private String code;
 
-	private String name;
+	private String cmpName;
 	
 	private String description;
 
@@ -37,7 +37,7 @@ public class CompanyDetailRequest {
 		
 		return CompanyDetail.builder()
 				.code(code)
-				.name(name)
+				.cmpName(cmpName)
 				.description(description)
 				.market(market)
 				.totalAsset(totalAsset)
