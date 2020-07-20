@@ -21,7 +21,7 @@ public class CompanyDetailService {
 	private final CompanyDetailRepository companyDetailRepository;
 
 	public List<CompanyDetailResponse> getCompanyDetailList() {
-		
+	
 		return companyDetailRepository.findAll().stream()
 				.map(CompanyDetail::toResponse)
 				.collect(Collectors.toList());
