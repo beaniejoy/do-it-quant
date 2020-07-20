@@ -230,7 +230,7 @@ def setTime():
 
 
 
-jongmok_code = ExcelRead("./data/sangjang_jongmokCode.xlsx")
+jongmok_code = ExcelRead("/home/ec2-user/app/diq/data/sangjang_jongmokCode.xlsx")
 QTable = []
 CTable = []
 # no_info = []
@@ -284,11 +284,11 @@ for i in jongmok_code.index:
 # no_info = set(no_info)
 # no_info = list(no_info)
 
-fn1 = './data/' + str(fds) + '/QuantDataTable.json'
-fn2 = './data/' + str(fds) + '/CompanyDetailTable.json'
+fn1 = '/home/ec2-user/app/diq/data/' + str(fds) + '/QuantDataTable.json'
+fn2 = '/home/ec2-user/app/diq/data/' + str(fds) + '/CompanyDetailTable.json'
 # fn3 = './data/' + str(fds) + '/no_info.json'
 
-dn = './data/' + str(fds)
+dn = '/home/ec2-user/app/diq/data/' + str(fds)
 if os.path.isdir(dn):
     shutil.rmtree(dn)
 os.mkdir(dn)

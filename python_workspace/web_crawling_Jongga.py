@@ -48,8 +48,8 @@ def crawl(c_code):
 
     return res
 
-
-jongmok_code = ExcelRead("./data/sangjang_jongmokCode.xlsx")
+# jongmok_code = ExcelRead("./data/sangjang_jongmokCode.xlsx")
+jongmok_code = ExcelRead("/home/ec2-user/app/diq/data/sangjang_jongmokCode.xlsx") # AWS EC2 절대경로 설정
 jongga_data = {}
 # 2020-07-16 이제 종가 데이터 없더라도 null로 올려서 보관
 # no_jongga = []
@@ -76,10 +76,10 @@ now = datetime.datetime.now()
 nowDate = now.strftime('%Y_%m_%d')
 nds = str(nowDate)
 
-fn1 = './data/' + str(nds) + '/dailyUpdateData.json'
+fn1 = '/home/ec2-user/app/diq/data/' + str(nds) + '/dailyUpdateData.json'
 # fn2 = './data/' + str(nds) + '/no_jongga.json'
 
-dn = './data/' + str(nds)
+dn = '/home/ec2-user/app/diq/data/' + str(nds)
 if os.path.isdir(dn):
     shutil.rmtree(dn)
 os.mkdir(dn)
