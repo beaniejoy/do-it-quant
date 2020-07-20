@@ -3,9 +3,11 @@
 REPOSITORY=/home/ec2-user/app/diq
 MODULE_NAME=quant
 
-echo "> Build 파일 복사"
+echo "> Build 파일 및 python파일 복사"
 
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
+cp $REPOSITORY/zip/*.py $REPOSITORY/
+cp $REPOSITORY/zip/data/sangjang_jongmokCode.xlsx $REPOSITORY/
 
 echo "> 현재 구동 중인 Application pid 확인"
 
