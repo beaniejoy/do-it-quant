@@ -38,7 +38,7 @@ public class CompanyDetailController {
 	}
 	
 	// 3개월 단위로 update
-//	@Scheduled(cron = "0 30 16 20 2,5,7,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 30 10 21 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() 
 			throws JsonParseException, JsonMappingException, IOException {
 		
