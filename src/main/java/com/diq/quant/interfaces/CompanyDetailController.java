@@ -19,7 +19,10 @@ import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.java.Log;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @RestController
 @RequiredArgsConstructor
 public class CompanyDetailController {
@@ -38,17 +41,22 @@ public class CompanyDetailController {
 	}
 	
 	// 3개월 단위로 update
-//	@Scheduled(cron = "0 19 17 16 2,5,7,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "30 48 13 20 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() 
 			throws JsonParseException, JsonMappingException, IOException {
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-
-		List<CompanyDetailRequest> companyDetailRequestList = objectMapper.readValue(new File("tmp_data/CompanyDetailTable.json"),
-				new TypeReference<List<CompanyDetailRequest>>() {
-		});
+		
+		DatePath datePath = new DatePath();
+		datePath.setQuarterPath();
+		
+		String filePath = "./data/" + datePath.getPath() + "/CompanyDetailTable.json";
+		
+		List<CompanyDetailRequest> companyDetailRequestList = objectMapper.readValue(new File(filePath),
+				new TypeReference<List<CompanyDetailRequest>>() {});
 		
 		companyDetailService.bulkUpdate(companyDetailRequestList);
+		
 		return ResponseEntity.ok("Update All Success");
 	}
 	

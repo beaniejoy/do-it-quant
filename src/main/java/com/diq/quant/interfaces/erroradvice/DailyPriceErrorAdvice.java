@@ -1,4 +1,4 @@
-package com.diq.quant.interfaces;
+package com.diq.quant.interfaces.erroradvice;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ControllerAdvice;

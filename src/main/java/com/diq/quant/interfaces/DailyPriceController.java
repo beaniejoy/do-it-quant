@@ -37,12 +37,17 @@ public class DailyPriceController {
 	}
 
 	// automatically daily update
-//	@Scheduled(cron = "0 59 16 * * *", zone = "Asia/Seoul")
+	@Scheduled(cron = "30 48 13 * * *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() throws JsonParseException, JsonMappingException, IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
 
-		List<DailyPriceApiRequest> dailyPriceApiRequestList = objectMapper.readValue(new File("tmp_data/dailyUpdateData.json"),
+		DatePath datePath = new DatePath();
+		datePath.setDailyDatePath();
+		
+		String filePath = "./data/" + datePath.getPath() + "/dailyUpdateData.json";
+		
+		List<DailyPriceApiRequest> dailyPriceApiRequestList = objectMapper.readValue(new File(filePath),
 				new TypeReference<List<DailyPriceApiRequest>>() {
 				});
 
