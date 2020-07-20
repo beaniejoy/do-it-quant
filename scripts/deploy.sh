@@ -7,7 +7,7 @@ echo "> Build 파일 및 python파일 복사"
 
 cp $REPOSITORY/zip/*.jar $REPOSITORY/
 cp $REPOSITORY/zip/*.py $REPOSITORY/
-cp $REPOSITORY/zip/data/sangjang_jongmokCode.xlsx $REPOSITORY/data
+cp $REPOSITORY/zip/sangjang_jongmokCode.xlsx $REPOSITORY/data
 
 echo "> 현재 구동 중인 Application pid 확인"
 
