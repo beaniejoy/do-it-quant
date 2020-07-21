@@ -6,6 +6,7 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
@@ -20,6 +21,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 import lombok.RequiredArgsConstructor;
 
+@CrossOrigin
 @RestController
 @RequiredArgsConstructor
 public class DailyPriceController {
@@ -37,7 +39,7 @@ public class DailyPriceController {
 	}
 
 	// automatically daily update
-	@Scheduled(cron = "0 43 10 * * *", zone = "Asia/Seoul")
+//	@Scheduled(cron = "0 43 10 * * *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() throws JsonParseException, JsonMappingException, IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
