@@ -51,7 +51,7 @@ public class QuantDataController {
 	
 	// 3개월 단위로 자동 update
 	// crawling data -> DB insert 자동화 작업
-	@Scheduled(cron = "0 35 10 21 2,5,7,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 43 10 21 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 
@@ -60,7 +60,8 @@ public class QuantDataController {
 		DatePath datePath = new DatePath();
 		datePath.setQuarterPath();
 		
-		String filePath = "./data/" + datePath.getPath() + "/QuantDataTable.json";
+		String absolutePath = "/home/ec2-user/app/diq";
+		String filePath = absolutePath + "/data/" + datePath.getPath() + "/QuantDataTable.json";
 		
 		List<QuantDataApiRequest> quantDataApiRequestList = objectMapper.readValue(new File(filePath),
 				new TypeReference<List<QuantDataApiRequest>>() {
