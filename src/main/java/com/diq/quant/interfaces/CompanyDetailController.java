@@ -38,7 +38,7 @@ public class CompanyDetailController {
 	}
 	
 	// 3개월 단위로 update
-	@Scheduled(cron = "0 48 11 21 2,5,7,11 *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 49 11 21 2,5,7,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() 
 			throws JsonParseException, JsonMappingException, IOException {
 		
@@ -47,8 +47,8 @@ public class CompanyDetailController {
 		DatePath datePath = new DatePath();
 		datePath.setQuarterPath();
 		
-//		String absolutePath = "/home/ec2-user/app/diq"; absolutePath + "/data/" + datePath.getPath()
-		String filePath =  "./CompanyDetailTable.json";
+		String absolutePath = "/home/ec2-user/app/diq"; 
+		String filePath = absolutePath + "/data/" + datePath.getPath() + "/CompanyDetailTable.json";
 		
 		List<CompanyDetailRequest> companyDetailRequestList = objectMapper.readValue(new File(filePath),
 				new TypeReference<List<CompanyDetailRequest>>() {});
