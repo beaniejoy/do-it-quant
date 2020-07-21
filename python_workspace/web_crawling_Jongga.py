@@ -48,8 +48,8 @@ def crawl(c_code):
 
     return res
 
-# jongmok_code = ExcelRead("./data/sangjang_jongmokCode.xlsx")
-jongmok_code = ExcelRead("/home/ec2-user/app/diq/data/sangjang_jongmokCode.xlsx") # AWS EC2 절대경로 설정
+
+jongmok_code = ExcelRead("/home/ec2-user/app/diq/data/sangjang_jongmokCode.xlsx")
 jongga_data = {}
 # 2020-07-16 이제 종가 데이터 없더라도 null로 올려서 보관
 # no_jongga = []

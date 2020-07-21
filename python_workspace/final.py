@@ -24,10 +24,10 @@ def setTime():
 
 d1, d2 = setTime()
 
-fn1 = "./data/" + d1 + "/dailyUpdateData.json"
+fn1 = "/home/ec2-user/app/diq/data/" + d1 + "/dailyUpdateData.json"
 
-fn2 = "./data/" + d2 + "/CompanyDetailTable.json"
-fn3 = "./data/" + d2 + "/QuantDataTable.json"
+fn2 = "/home/ec2-user/app/diq/data/" + d2 + "/CompanyDetailTable.json"
+fn3 = "/home/ec2-user/app/diq/data/" + d2 + "/QuantDataTable.json"
 # fn4 = "./data/" + d2 + "/no_info.json"
 
 endPriceData = JsonRead(fn1)
@@ -41,7 +41,7 @@ CData = JsonRead(fn2)
 #     else:
 #         c_data["endPrice"] = None
 
-dirN = "./data/final_data/" + str(d1)
+dirN = "/home/ec2-user/app/diq/data/final_data/" + str(d1)
 if os.path.isdir(dirN):
     shutil.rmtree(dirN)
 os.mkdir(dirN)
