@@ -37,7 +37,7 @@ public class DailyPriceController {
 	}
 
 	// automatically daily update
-	@Scheduled(cron = "0 30 10 * * *", zone = "Asia/Seoul")
+	@Scheduled(cron = "0 34 10 * * *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate() throws JsonParseException, JsonMappingException, IOException {
 
 		ObjectMapper objectMapper = new ObjectMapper();
