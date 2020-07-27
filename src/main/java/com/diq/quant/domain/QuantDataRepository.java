@@ -41,7 +41,14 @@ public interface QuantDataRepository extends JpaRepository<QuantData, Long>{
 			"RANK() OVER(ORDER BY a.roa DESC) rank_roa, " + 
 			"RANK() OVER(ORDER BY a.roe DESC) rank_roe, " + 
 			"b.rank_pbr, " + 
-			"c.rank_per " + 
+			"c.rank_per, " + 
+			"a.debt_ratio, " +
+			"a.reserve_ratio, " +
+			"a.operating_profit_ratio, " +
+			"a.roa, " +
+			"a.roe, " +
+			"a.pbr, " +
+			"a.per " +
 			"FROM quant_data a, table_rank_pbr b, table_rank_per c " + 
 			"WHERE a.id=b.id AND a.id=c.id; ", nativeQuery = true)
 	List<Object> findAllByRank();

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import com.diq.quant.dto.QuantDataApiResponse;
-import com.diq.quant.dto.QuantDataRankDto;
+import com.diq.quant.dto.QuantDataWithRankDto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

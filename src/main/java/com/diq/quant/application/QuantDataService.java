@@ -11,7 +11,7 @@ import com.diq.quant.domain.QuantData;
 import com.diq.quant.domain.QuantDataRepository;
 import com.diq.quant.dto.QuantDataApiRequest;
 import com.diq.quant.dto.QuantDataApiResponse;
-import com.diq.quant.dto.QuantDataRankDto;
+import com.diq.quant.dto.QuantDataWithRankDto;
 
 import lombok.RequiredArgsConstructor;
 
@@ -22,12 +22,12 @@ public class QuantDataService {
 
 	private final QuantDataRepository quantDataRepository;
 
-	public List<QuantDataRankDto> getRankList() {
+	public List<QuantDataWithRankDto> getRankList() {
 
 		List<Object> rankList = quantDataRepository
 				.findAllByRank();
 
-		return rankList.stream().map(this::toRankDto)
+		return rankList.stream().map(this::toDataWithRankDto)
 				.collect(Collectors.toList());
 	}
 
@@ -71,12 +71,12 @@ public class QuantDataService {
 
 	}
 
-	public QuantDataRankDto toRankDto(
+	public QuantDataWithRankDto toDataWithRankDto(
 			Object rawRankData) {
 
 		Object[] converted = (Object[]) rawRankData;
 		
-		return QuantDataRankDto.builder()
+		return QuantDataWithRankDto.builder()
 				.id(((BigInteger) converted[0]).longValue())
 				.cmpName((String) converted[1])
 				.code((String) converted[2])
@@ -85,8 +85,15 @@ public class QuantDataService {
 				.rankOper(((BigInteger) converted[5]).intValue())
 				.rankRoa(((BigInteger) converted[6]).intValue())
 				.rankRoe(((BigInteger) converted[7]).intValue())
-				.rankPer(((BigInteger) converted[8]).intValue())
-				.rankPbr(((BigInteger) converted[9]).intValue())
+				.rankPbr(((BigInteger) converted[8]).intValue())
+				.rankPer(((BigInteger) converted[9]).intValue())
+				.debtRatio((Double) converted[10])
+				.reserveRatio((Double) converted[11])
+				.operatingProfitRatio((Double) converted[12])
+				.roa((Double) converted[13])
+				.roe((Double) converted[14])
+				.pbr((Double) converted[15])
+				.per((Double) converted[16])
 				.build();
 	}
 

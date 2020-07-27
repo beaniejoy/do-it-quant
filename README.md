@@ -8,11 +8,11 @@
 
 ## 🤝 Team
 
-- Front, Mobile: [feelcard](https://github.com/feelcard)
-  - [Financial Data Crawling Repo](https://github.com/SeoYeonii/Do_IT_Quant/tree/master/python_workspace)
-- Back, Cloud: hanbinleejoy
-- Data Crawling: [SeoYeonii](https://github.com/SeoYeonii)
+- Front, Mobile: [`feelcard`](https://github.com/feelcard)
   - [React-Native Mobile Repo](https://github.com/feelcard/React_Native_Test)
+- Back, Cloud: `hanbinleejoy`
+- Data Crawling: [`SeoYeonii`](https://github.com/SeoYeonii)
+  - [Financial Data Crawling Repo](https://github.com/SeoYeonii/Do_IT_Quant/tree/master/python_workspace)
 
 <br>
 
@@ -30,7 +30,7 @@
 
 ## API 요구사항
 
-- `company_data` (분기마다 자동 update)
+- **company_data** (분기마다 자동 update)
   - `per`
   - `pbr`
   - `roa`
@@ -39,7 +39,7 @@
   - `operating_profit_ratio`(영업이익률)
   - `reserve_ratio`(유보율)
 
-- `company_detail` (분기마다 자동 update)
+- **company_detail** (분기마다 자동 update)
   - `code`(종목코드)
   - `cmp_name`(종목명/기업이름)
   - `total_asset`(총자산)
@@ -52,6 +52,6 @@
   - `description`(기업상세설명)
   - `market`(업종)
 
-- `daily_price` (매일 장마감 기준으로 자동 update)
+- **daily_price** (매일 장마감 기준으로 자동 update)
   - `code`(종목코드)
   - `end_price`(종가)

@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class QuantDataRankDto {
+public class QuantDataWithRankDto {
 
 	private Long id;
 	
@@ -31,5 +31,17 @@ public class QuantDataRankDto {
 
 	private Integer rankPbr;
 	
-	
+	private Double debtRatio;
+
+	private Double reserveRatio;
+
+	private Double operatingProfitRatio;
+
+	private Double roa;
+
+	private Double roe;
+
+	private Double per;
+
+	private Double pbr;
 }

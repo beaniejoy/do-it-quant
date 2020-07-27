@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.diq.quant.application.QuantDataService;
 import com.diq.quant.dto.QuantDataApiRequest;
 import com.diq.quant.dto.QuantDataApiResponse;
-import com.diq.quant.dto.QuantDataRankDto;
+import com.diq.quant.dto.QuantDataWithRankDto;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.JsonMappingException;
@@ -34,7 +34,7 @@ public class QuantDataController {
 	private final QuantDataService quantDataService;
 
 	@GetMapping("/quantdata/rank")
-	public List<QuantDataRankDto> rank() {
+	public List<QuantDataWithRankDto> rank() {
 		return quantDataService.getRankList();
 	}
 	
