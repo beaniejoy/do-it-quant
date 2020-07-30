@@ -5,6 +5,7 @@ tmp_data/
 !gradle/wrapper/gradle-wrapper.jar
 !**/src/main/**
 !**/src/test/**
+python_workspace/__pycache__
 
 ### STS ###
 .apt_generated

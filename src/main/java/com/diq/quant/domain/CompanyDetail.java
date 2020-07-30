@@ -44,7 +44,7 @@ public class CompanyDetail {
 	private Long netIncome; // 당기순이익
 			
 	private Long retainedEarnings; // 이익잉여금
-		
+			
 	public CompanyDetailResponse toResponse() {
 		
 		return CompanyDetailResponse.builder()

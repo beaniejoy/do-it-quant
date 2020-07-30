@@ -34,7 +34,7 @@ public class CompanyDetailRequest {
 	private Long netIncome;
 
 	private Long retainedEarnings;
-
+	
 	public CompanyDetail toEntity() {
 		
 		return CompanyDetail.builder()
