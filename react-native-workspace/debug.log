@@ -1,0 +1,27 @@
+[0725/223911.626:ERROR:process_info.cc(118)] ReadProcessMemory bool __cdecl crashpad::(anonymous namespace)::ReadStruct(HANDLE, crashpad::WinVMAddress, T *) [T = crashpad::process_types::RTL_USER_PROCESS_PARAMETERS<crashpad::process_types::internal::Traits64>]: ReadProcessMemory 또는 WriteProcessMemory의 일부 작업만을 마쳤습니다. (0x12B)
+[0725/223911.629:ERROR:process_info.cc(551)] ReadProcessData failed
+[0725/223911.629:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: 기존 프로세스에 액세스하려고 했습니다. (0xc000010a)
+[0725/223911.746:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.746:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.746:ERROR:process_reader_win.cc(123)] NtOpenThread: {액세스 거부} 프로세스가 개체에 액세스를 요구했지만 액세스 권한이 없습니다. (0xc0000022)
+[0725/223911.746:ERROR:exception_snapshot_win.cc(98)] thread ID 7788 not found in process
+[0725/223911.747:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.747:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.747:ERROR:exception_snapshot_win.cc(98)] thread ID 8940 not found in process
+[0725/223911.758:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.758:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.759:ERROR:exception_snapshot_win.cc(98)] thread ID 9368 not found in process
+[0725/223911.768:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.768:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.768:ERROR:process_reader_win.cc(123)] NtOpenThread: {액세스 거부} 프로세스가 개체에 액세스를 요구했지만 액세스 권한이 없습니다. (0xc0000022)
+[0725/223911.768:ERROR:exception_snapshot_win.cc(98)] thread ID 2932 not found in process
+[0725/223911.769:ERROR:scoped_process_suspend.cc(31)] NtSuspendProcess: 기존 프로세스에 액세스하려고 했습니다. (0xc000010a)
+[0725/223911.770:ERROR:process_info.cc(329)] VirtualQueryEx: 액세스가 거부되었습니다. (0x5)
+[0725/223911.770:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0725/223911.850:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.850:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.850:ERROR:process_reader_win.cc(123)] NtOpenThread: {액세스 거부} 프로세스가 개체에 액세스를 요구했지만 액세스 권한이 없습니다. (0xc0000022)
+[0725/223911.850:ERROR:exception_snapshot_win.cc(98)] thread ID 8748 not found in process
+[0725/223911.912:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.912:ERROR:process_reader_win.cc(151)] SuspendThread: 액세스가 거부되었습니다. (0x5)
+[0725/223911.912:ERROR:exception_snapshot_win.cc(98)] thread ID 7260 not found in process
