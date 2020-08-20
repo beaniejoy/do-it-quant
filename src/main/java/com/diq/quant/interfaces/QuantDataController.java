@@ -59,7 +59,7 @@ public class QuantDataController {
 	
 	// 3개월 단위로 자동 update
 	// crawling data -> DB insert 자동화 작업
-//	@Scheduled(cron = "0 43 10 21 2,5,7,11 *", zone = "Asia/Seoul")
+//	@Scheduled(cron = "0 0 0 15 2,5,8,11 *", zone = "Asia/Seoul")
 	public ResponseEntity<String> bulkUpdate()
 			throws JsonParseException, JsonMappingException, IOException {
 
