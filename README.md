@@ -6,11 +6,11 @@
 
 ## 💡 Introduction
 
-주식 투자를 도와주는 Quant 기반 종목 추천 모바일 앱입니다.  
-7개 중요 투자지표를 토대로 사용자가 비중치를 직접 입력하면 이 비중치들을 기준으로 계산하여 
+- 주식 투자를 도와주는 Quant 기반 종목 추천 모바일 앱입니다.  
+- 7개 중요 투자지표를 토대로 사용자가 비중치를 직접 입력하면 이 비중치들을 기준으로 계산하여 
 1 ~ 10위 까지의 종목을 제시해주는 앱입니다.  
-이를 통해 주관적인 판단에 의한 투자가 아닌 기계적으로 투자할 수 있게 도와주는 서비스를 제공합니다.  
-적립식 주식 투자, 다양한 투자 포트폴리오 구성 등 여러 부문에 활용할 수 있을 것으로 기대합니다.
+- 이를 통해 주관적인 판단에 의한 투자가 아닌 기계적으로 투자할 수 있게 도와주는 서비스를 제공합니다.  
+- 적립식 주식 투자, 다양한 투자 포트폴리오 구성 등 여러 부문에 활용할 수 있을 것으로 기대합니다.
 
 <br>
 
@@ -38,7 +38,7 @@
 
 ## 🔖 서비스 구조
 
-<p align="center"><img src="https://user-images.githubusercontent.com/41675375/90765283-a08acc00-e324-11ea-8916-d2722c01359c.png" width="800" height="400"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/41675375/90765283-a08acc00-e324-11ea-8916-d2722c01359c.png" width="700" height="350"></p>
 
 <br>
 
@@ -46,9 +46,15 @@
 
 <p align="center"><img src="https://user-images.githubusercontent.com/41675375/90776942-b8b71700-e335-11ea-8100-c75714e84e62.png" width="400" height="300"></p>
 
+<br>
+
 <p align="center"><img src="https://user-images.githubusercontent.com/41675375/90777248-19465400-e336-11ea-82d0-91ab8140d93c.png" width="550" height="300"></p>
 
+<br>
+
 <p align="center"><img src="https://user-images.githubusercontent.com/41675375/90777286-2a8f6080-e336-11ea-85a4-1e10204cb901.png" width="400" height="300"></p>
+
+<br>
 
 <p align="center"><img src="https://user-images.githubusercontent.com/41675375/90777329-3aa74000-e336-11ea-9547-cd868db26e13.png" width="400" height="300"></p>
 
@@ -148,8 +154,10 @@ public ResponseEntity<String> bulkUpdate()
    - `QuantDataTable.json` > `QuantDataController.java`
    - `CompanyDetailTable.json` > `CompanyDetailController.java`
 
+<br>
+
 ### React-Native 내 Async Storage 사용
 
-사용자가 Modify 페이지를 통해 7개 지표에 대한 비중치를 수정할 때마다 클라우드 서버 DB에 요청한다면 비효율적이라고 생각했습니다.
+사용자가 Modify 페이지를 통해 7개 지표에 대한 비중치를 수정할 때마다 클라우드 서버 DB에 요청한다면 비효율적이라고 생각했습니다.  
 이에 앱을 처음 시작했을 때 React-Native에서 지원하는 Async Storage에 서버 DB 데이터들을 한 번 동기화한다면 서버의 부담을 줄일 수 있을 것이라 판단하고 개발을 진행했습니다.
 
