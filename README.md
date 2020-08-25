@@ -17,10 +17,8 @@
 ## 🤝 Team
 
 - Front, Mobile: [`feelcard`](https://github.com/feelcard)
-  - [React-Native Mobile Repo](https://github.com/feelcard/React_Native_Test)
 - Back, Cloud: `hanbinleejoy`
 - Data Crawling: [`SeoYeonii`](https://github.com/SeoYeonii)
-  - [Financial Data Crawling Repo](https://github.com/SeoYeonii/Do_IT_Quant/tree/master/python_workspace)
 
 <br>
 
